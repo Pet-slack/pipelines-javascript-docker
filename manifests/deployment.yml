@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: petslackpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: petslackpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: petslackpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: petslackpipelinesjavascriptdocker 
+          image: myaksregistry001.azurecr.io/petslackpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
